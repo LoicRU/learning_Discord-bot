@@ -1,0 +1,17 @@
+# Fichiers de configuration locaux
+.env
+
+# Environnement virtuel
+venv/
+
+# Cache Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Logs
+*.log
+
+# Mac / Linux
+.DS_Store
