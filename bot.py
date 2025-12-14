@@ -3,7 +3,6 @@ from discord.ext import commands
 from dotenv import load_dotenv
 import os
 
-# Charger les variables d'environnement depuis .env
 load_dotenv()
 TOKEN = os.getenv('TOKEN')
 
@@ -20,5 +19,4 @@ async def on_ready():
 async def ping(ctx):
     await ctx.send("🏓 Pong !")
 
-# Utiliser la variable TOKEN
 bot.run(TOKEN)
