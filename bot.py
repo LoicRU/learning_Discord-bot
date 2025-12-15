@@ -50,4 +50,24 @@ async def help(ctx):
         )
     await ctx.send(embed=help)
 
+@bot.command(help="Calcul simple")
+async def calc(ctx, num1: float, operat: str, num2: float):
+    if operat == '+':
+        result = num1 + num2
+    elif operat == '-':
+        result = num1 - num2
+    elif operat == '*':
+        result = num1 * num2
+    elif operat == '/':
+        if num2 == 0:
+            await ctx.send("❌ Division par zéro impossible")
+            return
+        result = num1 / num2
+    else:
+        await ctx.send("❌ Opérateur invalide (+, -, *, /)")
+        return
+
+    await ctx.send(f"Résultat : {result}")
+
+
 bot.run(TOKEN)
