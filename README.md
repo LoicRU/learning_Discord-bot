@@ -1,97 +1,146 @@
-# Discord Bot in Python
+# Discord Bot in Python 🤖
 
-This project is a **Discord bot** written in Python, designed to help you learn how to create and manage a Discord bot.
+This project is a **Discord bot written in Python** using `discord.py`.
+It is designed to help you learn how to create, configure, and extend a Discord bot with custom commands and a custom help system.
 
-The bot token is stored securely in a `.env` file so it is not exposed in the code.
-
----
-
-## Current Features
-
-* **!ping** → The bot replies with `🏓 Pong!`
-* **!say [message]** → The bot repeats the message you write
-* **!userinfo [@user]** → Shows information about a member (username, ID, whether the user is a bot, date they joined the server, and account creation date)
-* Token configuration through a `.env` file
-* Uses **Discord Intents** to read message content
+The bot token is stored securely in a `.env` file so it is **never exposed in the code**.
 
 ---
 
-## Installation
+## ✨ Features
 
-### Prerequisites
+* **Custom `!help` command** (default Discord help removed)
+* **!ping** → Checks if the bot is responding
+* **!say [message]** → Makes the bot repeat a message
+* **!userinfo [@user]** → Displays detailed information about a user
+* Uses **Discord Intents** (Message Content enabled)
+* Secure token management with **python-dotenv**
 
-* Python 3.12 or higher
+---
+
+## 🧠 Commands Overview
+
+| Command             | Description                                                   |
+| ------------------- | ------------------------------------------------------------- |
+| `!ping`             | Replies with `🏓 Pong !`                                      |
+| `!say <message>`    | Repeats the provided message                                  |
+| `!userinfo [@user]` | Shows user info (ID, bot status, join date, account creation) |
+| `!help`             | Displays all available commands with descriptions             |
+
+---
+
+## 📦 Requirements
+
+* **Python 3.12+**
 * `pip`
-* `virtualenv` (recommended)
+* `venv` (recommended)
 
-### Steps
+---
 
-1. Clone this repository:
+## 🚀 Installation
+
+### 1️⃣ Clone the repository
 
 ```bash
 git clone https://github.com/your-username/your-repo.git
 cd your-repo
 ```
 
-2. Create a virtual environment:
+---
+
+### 2️⃣ Create a virtual environment
 
 ```bash
-python3 -m venv venv
+python -m venv venv
 ```
 
-3. Activate the virtual environment:
+---
+
+### 3️⃣ Activate the virtual environment
+
+**Linux / macOS**
 
 ```bash
-source venv/bin/activate  # Linux / macOS
-venv\Scripts\activate     # Windows
+source venv/bin/activate
 ```
 
-4. Install dependencies:
+**Windows**
+
+```bash
+venv\Scripts\activate
+```
+
+---
+
+### 4️⃣ Install dependencies
 
 ```bash
 pip install discord.py python-dotenv
 ```
 
-5. Create a `.env` file in the project folder with your Discord bot token:
+---
+
+### 5️⃣ Create a `.env` file
+
+Create a file named `.env` in the project root:
 
 ```env
-TOKEN=your_token_here
+TOKEN=your_discord_bot_token_here
 ```
 
+⚠️ **Never share your token**
+
 ---
 
-## Bot Configuration on Discord
+## 🤖 Discord Bot Setup
 
-1. Go to the [Discord Developer Portal](https://discord.com/developers/applications)
+1. Go to the **[Discord Developer Portal](https://discord.com/developers/applications)**
 2. Create a new application
 3. Add a bot to the application
-4. Copy the **TOKEN** into your `.env` file
-5. Enable **Privileged Gateway Intents** if needed (Message Content Intent)
+4. Copy the **Bot Token** into your `.env` file
+5. Enable **Message Content Intent** under *Privileged Gateway Intents*
+6. Invite the bot to your server
 
 ---
 
-## Running the Bot
+## ▶️ Running the Bot
 
-With the virtual environment activated, run:
+With the virtual environment activated:
 
 ```bash
 python bot.py
 ```
 
-If everything is correct, you will see in the terminal:
+If everything works correctly, you will see:
 
 ```
-✅ Bot connected: MyPythonBot#1234
+✅ Bot connecté : YourBotName#1234
 ```
 
-And the bot will be online on your Discord server.
+The bot will now be online on your server 🎉
 
 ---
 
-## Available Commands
+## 🛠 Custom Help System
 
-* `!ping` → Bot replies with `🏓 Pong!`
-* `!say [message]` → Bot repeats the message
-* `!userinfo [@user]` → Displays information about a member
+The default Discord help command is disabled and replaced with a custom embed-based help command:
 
-> You can easily add more commands in `bot.py`.
+```python
+bot.remove_command("help")
+```
+
+The `!help` command automatically lists:
+
+* All available commands
+* Their descriptions (defined with `help="..."`)
+
+This makes the bot easier to use and more user-friendly.
+
+---
+
+## 📌 Notes
+
+* You can easily add new commands using `@bot.command()`
+* Descriptions automatically appear in `!help`
+* This project is ideal for learning **discord.py basics**
+
