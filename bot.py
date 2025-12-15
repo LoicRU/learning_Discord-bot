@@ -42,14 +42,12 @@ async def help(ctx):
         title="📖 Aide - Commandes",
         color=discord.Color.green()
     )
-
     for command in bot.commands:
         help.add_field(
             name=f"!{command.name}",
             value=command.help or "Pas de description",
             inline=False
         )
-
     await ctx.send(embed=help)
 
 bot.run(TOKEN)
