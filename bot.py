@@ -25,6 +25,10 @@ async def ping(ctx):
 async def say(ctx, *, message):
     await ctx.send(message)
 
+#auto moderation
+
+
+
 @bot.command(help="Donne toutes les info de l'utilisateur")
 async def userinfo(ctx, member: discord.Member = None):
     member = member or ctx.author
@@ -60,11 +64,11 @@ async def calc(ctx, num1: float, operat: str, num2: float):
         result = num1 * num2
     elif operat == '/':
         if num2 == 0:
-            await ctx.send("❌ Division par zéro impossible")
+            await ctx.send(" Division par zéro impossible")
             return
         result = num1 / num2
     else:
-        await ctx.send("❌ Opérateur invalide (+, -, *, /)")
+        await ctx.send(" Opérateur invalide (+, -, *, /)")
         return
 
     await ctx.send(f"Résultat : {result}")
