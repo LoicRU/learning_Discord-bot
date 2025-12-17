@@ -154,17 +154,3 @@ Error handling:
 
 * ❌ Division by zero
 * ❌ Invalid operator
-
----
-
-## 📌 Notes
-
-* New commands can easily be added using `@bot.command()`
-* Command descriptions automatically appear in `!help`
-* Ideal project for learning:
-
-  * `discord.py`
-  * embeds
-  * intents
-  * secure token management
-
